@@ -1,6 +1,6 @@
 title: Project Workspace
-baseurl: "/AMMITY-milesontes" 
-url: "https://MarionDugue.github.io"
+baseurl: "/AMMITY-milestones" 
+url: "https://mariondugue.github.io"
 
 collections:
   articles:
