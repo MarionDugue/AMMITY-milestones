@@ -15,6 +15,42 @@ body {
     color: var(--text);
 }
 
+/* Intro Section Styling */
+.intro-box {
+    text-align: center;
+    max-width: 650px;
+    margin: 0 auto 4rem auto; /* Large bottom margin to separate from timeline */
+    padding: 2rem;
+    background: var(--white);
+    border-radius: 25px; /* Matches the friendly curves of your checkpoints */
+    box-shadow: 0 4px 20px rgba(74, 78, 105, 0.03);
+}
+
+.intro-box h1 {
+    color: var(--accent); /* Friendly Soft Coral */
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.intro-box p {
+    line-height: 1.6;
+    color: var(--text); /* Muted Slate */
+}
+
+.intro-tags {
+    margin-top: 1.5rem;
+}
+
+.intro-tags span {
+    background: var(--bg-color); /* Warm Cream */
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    margin: 0 5px;
+    color: var(--accent);
+    font-weight: bold;
+}
+
 /* Sidebar Styling */
 .sidebar {
     width: var(--sidebar-w);
