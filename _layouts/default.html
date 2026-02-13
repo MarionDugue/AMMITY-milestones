@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="{{ '/assets/style.css' | relative_url }}">
+    <title>{{ page.title }} | AMMITY</title>
+</head>
+<body>
+    {% include sidebar.html %}
+    <main class="main-content">
+        {{ content }}
+    </main>
+</body>
+</html>
