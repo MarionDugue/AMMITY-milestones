@@ -16,16 +16,15 @@ body {
     color: var(--text);
 }
 
-
 .sidebar {
     width: var(--sidebar-w);
     height: 100vh;
-@@ -25,225 +25,91 @@ body {
+    position: fixed;
+    border-right: 1px solid var(--line);
+    padding: 2rem 1rem;
     background: var(--white);
     z-index: 100;
 }
-
-
 
 .sidebar a { 
     display: block; 
@@ -122,14 +121,12 @@ body {
     width: 100%;
     padding: 1.2rem;
     border-radius: 15px;
-
     border: 2px solid var(--line);
     background: var(--white);
     font-family: inherit;
     font-size: 1rem;
     margin-bottom: 1.5rem;
     transition: 0.3s;
-
 }
 
 #articleSearch:focus {
@@ -148,7 +145,6 @@ body {
     transition: 0.2s;
     color: var(--text);
 }
-
 
 .tag-btn.active, .tag-btn:hover {
     background: var(--accent);
@@ -175,14 +171,10 @@ body {
     box-shadow: 0 4px 15px rgba(0,0,0,0.05);
 }
 
-
 .result-meta {
     flex: 0 0 140px;
-
-
     font-size: 0.8rem;
 }
-
 
 .result-content {
     flex: 1;
