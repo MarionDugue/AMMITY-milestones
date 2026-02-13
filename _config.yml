@@ -1,3 +1,14 @@
-# Site settings
-title: AMMITY
-description: Archive of the AMMITY project
+title: Project Workspace
+baseurl: "/AMMITY-milesontes" 
+url: "https://MarionDugue.github.io"
+
+collections:
+  articles:
+    output: true
+    permalink: /menstruation/:title/
+
+defaults:
+  - scope:
+      path: "_articles"
+    values:
+      layout: "article"
