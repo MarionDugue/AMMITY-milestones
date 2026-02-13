@@ -1,11 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AMMITY</title>
-</head>
-<body>
-    <h1>Welcome to AMMITY</h1>
-</body>
-</html>
+---
+layout: default
+title: Project Timeline
+---
+<div class="timeline">
+    {% for post in site.posts %}
+    <div class="checkpoint {% cycle 'left', 'right' %}">
+        <div class="checkpoint-content" onclick="location.href='{{ post.url | relative_url }}'">
+            <small>{{ post.date | date: "%b %d, %Y" }}</small>
+            <h3>{{ post.title }}</h3>
+            <div class="snippet">
+                {{ post.excerpt | strip_html | truncate: 120 }}
+                <br><strong>Read more →</strong>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
