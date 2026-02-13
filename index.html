@@ -1,16 +1,19 @@
 ---
 layout: default
-title: Project Timeline
+title: Home
 ---
-<div class="timeline">
+<div class="timeline-container">
+    <div class="timeline-line"></div>
     {% for post in site.posts %}
-    <div class="checkpoint {% cycle 'left', 'right' %}">
-        <div class="checkpoint-content" onclick="location.href='{{ post.url | relative_url }}'">
-            <small>{{ post.date | date: "%b %d, %Y" }}</small>
-            <h3>{{ post.title }}</h3>
-            <div class="snippet">
-                {{ post.excerpt | strip_html | truncate: 120 }}
-                <br><strong>Read more →</strong>
+    <div class="timeline-item {% cycle 'left', 'right' %}">
+        <div class="checkpoint" onclick="location.href='{{ post.url | relative_url }}'">
+            <div class="checkpoint-content">
+                <span class="date">{{ post.date | date: "%b %d, %Y" }}</span>
+                <h3>{{ post.title }}</h3>
+                <div class="snippet">
+                    {{ post.excerpt | strip_html | truncate: 100 }}
+                    <span class="read-more">Read sub-page →</span>
+                </div>
             </div>
         </div>
     </div>
