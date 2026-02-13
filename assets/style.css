@@ -285,3 +285,94 @@ body {
     font-size: 1.1rem;
     color: var(--text);
 }
+
+/* --- SEARCH & TAG SYSTEM --- */
+.search-header-section {
+    max-width: 850px;
+    margin: 0 auto 4rem auto;
+    text-align: center;
+}
+
+#articleSearchInput {
+    width: 100%;
+    max-width: 500px;
+    padding: 1rem 1.5rem;
+    border-radius: 12px;
+    border: 2px solid var(--line);
+    background: var(--white);
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    transition: 0.3s;
+}
+
+#articleSearchInput:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 10px rgba(255, 140, 148, 0.1);
+}
+
+.tag-navigation {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+}
+
+.filter-btn {
+    background: var(--white);
+    border: 1px solid var(--line);
+    padding: 0.5rem 1.2rem;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.2s;
+    color: var(--text);
+}
+
+.filter-btn.active, .filter-btn:hover {
+    background: var(--accent);
+    color: white;
+    border-color: var(--accent);
+}
+
+/* Thin Rectangular Search Results */
+.search-result-item {
+    background: var(--white);
+    display: flex; /* Force horizontal list layout */
+    align-items: center;
+    padding: 1.2rem 2rem;
+    margin-bottom: 1rem;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-left: 5px solid transparent;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.search-result-item:hover {
+    transform: translateX(10px);
+    border-left-color: var(--accent);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+}
+
+.item-metadata {
+    flex: 0 0 140px;
+    font-size: 0.8rem;
+    border-right: 1px solid var(--line);
+    margin-right: 2rem;
+}
+
+.item-content { flex: 1; }
+.item-content h2 { margin: 0 0 5px 0; font-size: 1.15rem; color: var(--accent); }
+.item-content p { margin: 0; font-size: 0.9rem; color: #666; }
+
+.pill-tag {
+    background: var(--bg-color);
+    color: var(--accent);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 0.7rem;
+    margin-right: 4px;
+    font-weight: bold;
+}
