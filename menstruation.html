@@ -3,22 +3,75 @@ layout: default
 title: Learning about menstruation
 ---
 
-<div class="educational-header">
+<div class="search-header">
     <h1>Educational Resources</h1>
-    <p>A collection of articles and research notes regarding menstrual health.</p>
+    <div class="search-controls">
+        <input type="text" id="articleSearch" placeholder="Search by keywords..." onkeyup="filterArticles()">
+        <div class="tag-filters" id="tagFilters">
+            <button class="tag-btn active" onclick="filterByTag('all')">All</button>
+            {% assign tags = "" | split: "," %}
+            {% for article in site.articles %}
+                {% for tag in article.tags %}
+                    {% unless tags contains tag %}
+                        {% assign tags = tags | push: tag %}
+                        <button class="tag-btn" onclick="filterByTag('{{ tag }}')">{{ tag }}</button>
+                    {% endunless %}
+                {% endfor %}
+            {% endfor %}
+        </div>
+    </div>
 </div>
 
-<div class="article-gallery">
+<div class="article-search-results" id="articleList">
   {% for article in site.articles %}
-    <div class="article-card" onclick="location.href='{{ article.url | relative_url }}'">
-        <div class="article-card-header">
-            <span class="article-date">{{ article.date | date: "%B %d, %Y" }}</span>
-            <h2>{{ article.title }}</h2>
+    <div class="article-result-card" 
+         data-tags="{{ article.tags | join: ',' | downcase }}" 
+         data-title="{{ article.title | downcase }}"
+         onclick="location.href='{{ article.url | relative_url }}'">
+        <div class="result-meta">
+            <span class="result-date">{{ article.date | date: "%b %d, %Y" }}</span>
+            <div class="result-tags">
+                {% for tag in article.tags %}
+                    <span class="mini-tag">{{ tag }}</span>
+                {% endfor %}
+            </div>
         </div>
-        <p class="article-summary">
-            {{ article.excerpt | strip_html | truncate: 160 }}
-        </p>
-        <span class="read-more-text">Read Article →</span>
+        <div class="result-content">
+            <h2>{{ article.title }}</h2>
+            <p>{{ article.excerpt | strip_html | truncate: 120 }}</p>
+        </div>
+        <div class="result-action">
+            <svg class="chevron" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
+        </div>
     </div>
   {% endfor %}
 </div>
+
+<script>
+function filterArticles() {
+    let input = document.getElementById('articleSearch').value.toLowerCase();
+    let cards = document.getElementsByClassName('article-result-card');
+    
+    for (let card of cards) {
+        let title = card.getAttribute('data-title');
+        card.style.display = title.includes(input) ? "flex" : "none";
+    }
+}
+
+function filterByTag(tag) {
+    let cards = document.getElementsByClassName('article-result-card');
+    let buttons = document.getElementsByClassName('tag-btn');
+    
+    for (let btn of buttons) btn.classList.remove('active');
+    event.currentTarget.classList.add('active');
+
+    for (let card of cards) {
+        let tags = card.getAttribute('data-tags');
+        if (tag === 'all' || tags.includes(tag.toLowerCase())) {
+            card.style.display = "flex";
+        } else {
+            card.style.display = "none";
+        }
+    }
+}
+</script>
