@@ -1,15 +1,24 @@
 ---
 layout: default
-title: Learning about Menstruation
+title: Learning about menstruation
 ---
-<h1>Resources & Articles</h1>
-<ul style="list-style: none; padding: 0;">
-    {% for article in site.articles %}
-    <li style="margin-bottom: 2rem; border-bottom: 1px solid #eee; padding-bottom: 1rem;">
-        <a href="{{ article.url | relative_url }}" style="text-decoration: none; color: inherit;">
+
+<div class="educational-header">
+    <h1>Educational Resources</h1>
+    <p>A collection of articles and research notes regarding menstrual health.</p>
+</div>
+
+<div class="article-gallery">
+  {% for article in site.articles %}
+    <div class="article-card" onclick="location.href='{{ article.url | relative_url }}'">
+        <div class="article-card-header">
+            <span class="article-date">{{ article.date | date: "%B %d, %Y" }}</span>
             <h2>{{ article.title }}</h2>
-            <p>{{ article.excerpt | strip_html | truncate: 160 }}</p>
-        </a>
-    </li>
-    {% endfor %}
-</ul>
+        </div>
+        <p class="article-summary">
+            {{ article.excerpt | strip_html | truncate: 160 }}
+        </p>
+        <span class="read-more-text">Read Article →</span>
+    </div>
+  {% endfor %}
+</div>
