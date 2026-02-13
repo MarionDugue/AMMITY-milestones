@@ -7,51 +7,15 @@
     --white: #ffffff;
 }
 
+/* --- Global & Layout --- */
 body { 
     display: flex; 
     margin: 0; 
-    font-family: 'Nunito', 'Quicksand', sans-serif; /* Approachable rounded fonts */
+    font-family: 'Nunito', 'Quicksand', sans-serif; 
     background: var(--bg-color); 
     color: var(--text);
 }
 
-/* Intro Section Styling */
-.intro-box {
-    text-align: center;
-    max-width: 650px;
-    margin: 0 auto 4rem auto; /* Large bottom margin to separate from timeline */
-    padding: 2rem;
-    background: var(--white);
-    border-radius: 25px; /* Matches the friendly curves of your checkpoints */
-    box-shadow: 0 4px 20px rgba(74, 78, 105, 0.03);
-}
-
-.intro-box h1 {
-    color: var(--accent); /* Friendly Soft Coral */
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-}
-
-.intro-box p {
-    line-height: 1.6;
-    color: var(--text); /* Muted Slate */
-}
-
-.intro-tags {
-    margin-top: 1.5rem;
-}
-
-.intro-tags span {
-    background: var(--bg-color); /* Warm Cream */
-    padding: 5px 15px;
-    border-radius: 20px;
-    font-size: 0.8rem;
-    margin: 0 5px;
-    color: var(--accent);
-    font-weight: bold;
-}
-
-/* Sidebar Styling */
 .sidebar {
     width: var(--sidebar-w);
     height: 100vh;
@@ -59,6 +23,7 @@ body {
     border-right: 1px solid var(--line);
     padding: 2rem 1rem;
     background: var(--white);
+    z-index: 100;
 }
 
 .sidebar a { 
@@ -73,13 +38,44 @@ body {
 .sidebar a:hover { 
     color: var(--accent); 
     background: var(--bg-color);
-    padding-left: 1.2rem; /* Interactive sliding effect */
+    padding-left: 1.2rem;
 }
 
-/* Content Layout */
-.main-content { margin-left: var(--sidebar-w); flex: 1; padding: 4rem; position: relative; }
+.main-content { 
+    margin-left: var(--sidebar-w); 
+    flex: 1; 
+    padding: 4rem; 
+    position: relative; 
+}
 
-/* Timeline Aesthetic */
+/* --- Intro Section --- */
+.intro-box {
+    text-align: center;
+    max-width: 650px;
+    margin: 0 auto 4rem auto;
+    padding: 2rem;
+    background: var(--white);
+    border-radius: 25px;
+    box-shadow: 0 4px 20px rgba(74, 78, 105, 0.03);
+}
+
+.intro-box h1 {
+    color: var(--accent);
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.intro-tags span {
+    background: var(--bg-color);
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    margin: 0 5px;
+    color: var(--accent);
+    font-weight: bold;
+}
+
+/* --- Timeline Aesthetic --- */
 .timeline-container { position: relative; max-width: 800px; margin: auto; }
 .timeline-line {
     position: absolute; left: 50%; width: 3px; height: 100%;
@@ -87,35 +83,26 @@ body {
     border-radius: 3px;
 }
 
-.timeline-item {
-    position: relative; width: 50%; padding: 40px 20px; box-sizing: border-box;
-}
+.timeline-item { position: relative; width: 50%; padding: 40px 20px; box-sizing: border-box; }
 .timeline-item.left { left: 0; text-align: right; }
 .timeline-item.right { left: 50%; text-align: left; }
 
-/* The "Friendly" Interactive Cards */
 .checkpoint-content {
     background: var(--white); 
     border: 2px solid transparent; 
     padding: 1.5rem;
     cursor: pointer; 
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Bouncy feel */
-    border-radius: 20px; /* Softer, friendly corners */
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border-radius: 20px;
     box-shadow: 0 4px 15px rgba(74, 78, 105, 0.05); 
 }
 
 .checkpoint-content:hover { 
-    transform: translateY(-8px) scale(1.02); /* Interactive lift */
+    transform: translateY(-8px) scale(1.02);
     border-color: var(--accent); 
-    box-shadow: 0 12px 24px rgba(255, 140, 148, 0.15); /* Warm coral glow */
+    box-shadow: 0 12px 24px rgba(255, 140, 148, 0.15);
 }
 
-.checkpoint-content h3 {
-    margin: 0;
-    color: var(--accent); 
-}
-
-/* Hover Snippet Logic */
 .snippet { 
     max-height: 0; 
     opacity: 0; 
@@ -125,130 +112,137 @@ body {
     margin-top: 10px; 
     color: #777; 
 }
-.checkpoint-content:hover .snippet { 
-    max-height: 150px; 
-    opacity: 1; 
-}
+.checkpoint-content:hover .snippet { max-height: 150px; opacity: 1; }
 
-/* Gallery Layout */
-.article-gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 2rem;
-    margin-top: 3rem;
-}
+/* --- Educational Resources: Search Space --- */
+.search-controls { margin-bottom: 3rem; }
 
-.article-card {
+#articleSearch {
+    width: 100%;
+    padding: 1.2rem;
+    border-radius: 15px;
+    border: 2px solid var(--line);
     background: var(--white);
-    padding: 2rem;
-    border-radius: 25px; /* Friendly rounded corners */
+    font-family: inherit;
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    transition: 0.3s;
+}
+
+#articleSearch:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 10px rgba(255, 140, 148, 0.1);
+}
+
+.tag-btn {
+    background: var(--white);
+    border: 1px solid var(--line);
+    padding: 0.5rem 1.2rem;
+    border-radius: 20px;
+    margin-right: 0.5rem;
+    cursor: pointer;
+    transition: 0.2s;
+    color: var(--text);
+}
+
+.tag-btn.active, .tag-btn:hover {
+    background: var(--accent);
+    color: white;
+    border-color: var(--accent);
+}
+
+/* Thinner Rectangular Result Cards */
+.article-result-card {
+    background: var(--white);
+    display: flex;
+    align-items: center;
+    padding: 1.2rem 2rem;
+    margin-bottom: 1rem;
+    border-radius: 15px;
     cursor: pointer;
     transition: all 0.3s ease;
-    border: 2px solid transparent;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    border-left: 5px solid transparent;
 }
 
-.article-card:hover {
-    border-color: var(--accent);
-    transform: translateY(-8px);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+.article-result-card:hover {
+    transform: translateX(10px);
+    border-left-color: var(--accent);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
 }
 
-.article-date {
+.result-meta {
+    flex: 0 0 140px;
     font-size: 0.8rem;
-    color: var(--accent);
-    font-weight: bold;
-    text-transform: uppercase;
 }
 
-.article-summary {
+.result-content {
+    flex: 1;
+    padding: 0 1.5rem;
+}
+
+.result-content h2 {
+    margin: 0 0 0.2rem 0;
+    font-size: 1.1rem;
     color: var(--text);
-    line-height: 1.6;
-    margin: 1rem 0;
 }
 
-/* Back Link Styling */
-.back-link {
+.result-content p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #666;
+    line-height: 1.4;
+}
+
+.mini-tag {
+    background: var(--bg-color);
+    color: var(--accent);
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 0.7rem;
+    margin-right: 4px;
+    font-weight: bold;
+}
+
+/* --- Navigation & Post Details --- */
+.back-arrow-link, .back-link {
     display: inline-flex;
     align-items: center;
     text-decoration: none;
     color: var(--text);
-    font-weight: bold;
+    font-weight: 700;
     margin-bottom: 2rem;
-    transition: 0.2s;
+    transition: 0.3s;
 }
 
-.back-link:hover {
+.back-arrow-link:hover, .back-link:hover {
     color: var(--accent);
     transform: translateX(-5px);
 }
 
-.back-link svg { margin-right: 8px; }
-
-/* Navigation Header */
-.navigation-header {
-    margin-bottom: 2.5rem;
-}
-
-.back-arrow-link {
-    display: inline-flex;
-    align-items: center;
-    text-decoration: none;
-    color: var(--text); /* Muted Slate */
-    font-weight: 700;
-    font-size: 1rem;
-    transition: all 0.3s ease;
-}
-
-/* Friendly Arrow Animation */
-.arrow-icon {
-    width: 24px;
-    height: 24px;
+.arrow-icon, .arrow {
+    width: 20px;
+    height: 20px;
     fill: none;
     stroke: currentColor;
     stroke-width: 2.5;
     stroke-linecap: round;
     stroke-linejoin: round;
-    margin-right: 10px;
-    transition: transform 0.3s ease;
+    margin-right: 8px;
 }
 
-.back-arrow-link:hover {
-    color: var(--accent); /* Friendly Soft Coral */
-}
-
-.back-arrow-link:hover .arrow-icon {
-    transform: translateX(-6px); /* Interactive nudge effect */
-}
-
-/* Navigation for Timeline */
-.timeline-navigation {
-    margin-bottom: 2.5rem;
-}
-
-/* Milestone Content Styling */
-.milestone-detail {
+.milestone-detail, .friendly-article {
     max-width: 750px;
     margin: 0 auto;
 }
 
-.milestone-header h1 {
+.milestone-header h1, .friendly-article h1 {
     font-size: 2.5rem;
-    color: var(--accent); /* Friendly Soft Coral */
+    color: var(--accent);
     margin-top: 0.5rem;
 }
 
-.milestone-date {
-    font-size: 0.9rem;
-    font-weight: bold;
-    color: var(--text); /* Muted Slate */
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-.milestone-body {
+.milestone-body, .article-body {
     line-height: 1.8;
     font-size: 1.1rem;
     color: var(--text);
