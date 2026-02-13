@@ -1,0 +1,47 @@
+:root {
+    --bg-color: #fcfcfc;
+    --accent: #333;
+    --line: #e0e0e0;
+    --sidebar-w: 240px;
+}
+
+body { display: flex; margin: 0; font-family: sans-serif; background: var(--bg-color); }
+
+/* Sidebar */
+.sidebar {
+    width: var(--sidebar-w);
+    height: 100vh;
+    position: fixed;
+    border-right: 1px solid var(--line);
+    padding: 2rem 1rem;
+    background: white;
+}
+.sidebar a { display: block; padding: 0.8rem; text-decoration: none; color: #666; transition: 0.2s; }
+.sidebar a:hover { color: var(--accent); background: #f9f9f9; }
+
+/* Content Wrapper */
+.main-content { margin-left: var(--sidebar-w); flex: 1; padding: 4rem; position: relative; }
+
+/* Timeline Logic */
+.timeline-container { position: relative; max-width: 800px; margin: auto; }
+.timeline-line {
+    position: absolute; left: 50%; width: 2px; height: 100%;
+    background: var(--line); transform: translateX(-50%);
+}
+
+.timeline-item {
+    position: relative; width: 50%; padding: 40px 20px; box-sizing: border-box;
+}
+.timeline-item.left { left: 0; text-align: right; }
+.timeline-item.right { left: 50%; text-align: left; }
+
+/* Interactive Checkpoints */
+.checkpoint-content {
+    background: white; border: 1px solid var(--line); padding: 1.5rem;
+    cursor: pointer; transition: 0.3s; border-radius: 4px;
+}
+.checkpoint-content:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
+
+/* Hover Snippet Animation */
+.snippet { max-height: 0; opacity: 0; overflow: hidden; transition: 0.4s ease; font-size: 0.9rem; margin-top: 10px; color: #777; }
+.checkpoint-content:hover .snippet { max-height: 150px; opacity: 1; }
