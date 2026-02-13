@@ -1,22 +1,18 @@
 ---
 layout: default
 ---
-<div class="navigation-header">
-    <a href="{{ '/menstruation' | relative_url }}" class="back-arrow-link">
-        <svg class="arrow-icon" viewBox="0 0 24 24">
-            <path d="M19 12H5M12 19l-7-7 7-7"/>
-        </svg>
-        <span>Back to Resources</span>
-    </a>
-</div>
+<div class="article-wrapper">
+    <nav class="article-nav">
+        <a href="{{ '/menstruation' | relative_url }}" class="back-link">
+            <svg class="arrow" viewBox="0 0 24 24"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+            Back to Resources
+        </a>
+    </nav>
 
-<article class="article-content-wrapper">
-    <header class="article-info">
-        <span class="article-date">{{ page.date | date: "%B %d, %Y" }}</span>
+    <article class="friendly-article">
         <h1>{{ page.title }}</h1>
-    </header>
-
-    <div class="article-body">
-        {{ content }}
-    </div>
-</article>
+        <div class="article-body">
+            {{ content }}
+        </div>
+    </article>
+</div>
