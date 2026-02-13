@@ -1,32 +1,54 @@
 :root {
-    --bg-color: #fcfcfc;
-    --accent: #333;
-    --line: #e0e0e0;
+    --bg-color: #FEF9EF; /* Warm Cream background */
+    --accent: #FF8C94;    /* Friendly Soft Coral */
+    --text: #4A4E69;      /* Muted Slate for softer reading */
+    --line: #E9E1D4;      /* Warmer timeline line */
     --sidebar-w: 240px;
+    --white: #ffffff;
 }
 
-body { display: flex; margin: 0; font-family: sans-serif; background: var(--bg-color); }
+body { 
+    display: flex; 
+    margin: 0; 
+    font-family: 'Nunito', 'Quicksand', sans-serif; /* Approachable rounded fonts */
+    background: var(--bg-color); 
+    color: var(--text);
+}
 
-/* Sidebar */
+/* Sidebar Styling */
 .sidebar {
     width: var(--sidebar-w);
     height: 100vh;
     position: fixed;
     border-right: 1px solid var(--line);
     padding: 2rem 1rem;
-    background: white;
+    background: var(--white);
 }
-.sidebar a { display: block; padding: 0.8rem; text-decoration: none; color: #666; transition: 0.2s; }
-.sidebar a:hover { color: var(--accent); background: #f9f9f9; }
 
-/* Content Wrapper */
+.sidebar a { 
+    display: block; 
+    padding: 0.8rem; 
+    text-decoration: none; 
+    color: var(--text); 
+    transition: 0.3s; 
+    border-radius: 8px; 
+}
+
+.sidebar a:hover { 
+    color: var(--accent); 
+    background: var(--bg-color);
+    padding-left: 1.2rem; /* Interactive sliding effect */
+}
+
+/* Content Layout */
 .main-content { margin-left: var(--sidebar-w); flex: 1; padding: 4rem; position: relative; }
 
-/* Timeline Logic */
+/* Timeline Aesthetic */
 .timeline-container { position: relative; max-width: 800px; margin: auto; }
 .timeline-line {
-    position: absolute; left: 50%; width: 2px; height: 100%;
+    position: absolute; left: 50%; width: 3px; height: 100%;
     background: var(--line); transform: translateX(-50%);
+    border-radius: 3px;
 }
 
 .timeline-item {
@@ -35,13 +57,39 @@ body { display: flex; margin: 0; font-family: sans-serif; background: var(--bg-c
 .timeline-item.left { left: 0; text-align: right; }
 .timeline-item.right { left: 50%; text-align: left; }
 
-/* Interactive Checkpoints */
+/* The "Friendly" Interactive Cards */
 .checkpoint-content {
-    background: white; border: 1px solid var(--line); padding: 1.5rem;
-    cursor: pointer; transition: 0.3s; border-radius: 4px;
+    background: var(--white); 
+    border: 2px solid transparent; 
+    padding: 1.5rem;
+    cursor: pointer; 
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Bouncy feel */
+    border-radius: 20px; /* Softer, friendly corners */
+    box-shadow: 0 4px 15px rgba(74, 78, 105, 0.05); 
 }
-.checkpoint-content:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
 
-/* Hover Snippet Animation */
-.snippet { max-height: 0; opacity: 0; overflow: hidden; transition: 0.4s ease; font-size: 0.9rem; margin-top: 10px; color: #777; }
-.checkpoint-content:hover .snippet { max-height: 150px; opacity: 1; }
+.checkpoint-content:hover { 
+    transform: translateY(-8px) scale(1.02); /* Interactive lift */
+    border-color: var(--accent); 
+    box-shadow: 0 12px 24px rgba(255, 140, 148, 0.15); /* Warm coral glow */
+}
+
+.checkpoint-content h3 {
+    margin: 0;
+    color: var(--accent); 
+}
+
+/* Hover Snippet Logic */
+.snippet { 
+    max-height: 0; 
+    opacity: 0; 
+    overflow: hidden; 
+    transition: 0.4s ease; 
+    font-size: 0.9rem; 
+    margin-top: 10px; 
+    color: #777; 
+}
+.checkpoint-content:hover .snippet { 
+    max-height: 150px; 
+    opacity: 1; 
+}
