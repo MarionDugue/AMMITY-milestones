@@ -3,17 +3,22 @@ layout: default
 title: Learning about menstruation
 ---
 
-<div class="search-header">
-    <h1>Educational Resources</h1>
+<div class="search-container">
+    <div class="intro-box">
+        <h1>Educational Resources</h1>
+        <p>Explore our research and articles through keywords or specific tags.</p>
+    </div>
+
     <div class="search-controls">
-        <input type="text" id="articleSearch" placeholder="Search by keywords..." onkeyup="filterArticles()">
-        <div class="tag-filters" id="tagFilters">
+        <input type="text" id="articleSearch" placeholder="Search by title or keywords..." onkeyup="filterArticles()">
+        
+        <div class="tag-cloud">
             <button class="tag-btn active" onclick="filterByTag('all')">All</button>
-            {% assign tags = "" | split: "," %}
+            {% assign all_tags = "" | split: "," %}
             {% for article in site.articles %}
                 {% for tag in article.tags %}
-                    {% unless tags contains tag %}
-                        {% assign tags = tags | push: tag %}
+                    {% unless all_tags contains tag %}
+                        {% assign all_tags = all_tags | push: tag %}
                         <button class="tag-btn" onclick="filterByTag('{{ tag }}')">{{ tag }}</button>
                     {% endunless %}
                 {% endfor %}
@@ -22,26 +27,29 @@ title: Learning about menstruation
     </div>
 </div>
 
-<div class="article-search-results" id="articleList">
+<div class="search-results" id="articleList">
   {% for article in site.articles %}
     <div class="article-result-card" 
          data-tags="{{ article.tags | join: ',' | downcase }}" 
          data-title="{{ article.title | downcase }}"
          onclick="location.href='{{ article.url | relative_url }}'">
-        <div class="result-meta">
-            <span class="result-date">{{ article.date | date: "%b %d, %Y" }}</span>
-            <div class="result-tags">
+        
+        <div class="card-meta">
+            <span class="card-date">{{ article.date | date: "%b %d, %Y" }}</span>
+            <div class="card-tags">
                 {% for tag in article.tags %}
-                    <span class="mini-tag">{{ tag }}</span>
+                    <span class="tag-pill">{{ tag }}</span>
                 {% endfor %}
             </div>
         </div>
-        <div class="result-content">
+
+        <div class="card-content">
             <h2>{{ article.title }}</h2>
-            <p>{{ article.excerpt | strip_html | truncate: 120 }}</p>
+            <p>{{ article.excerpt | strip_html | truncate: 140 }}</p>
         </div>
-        <div class="result-action">
-            <svg class="chevron" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
+
+        <div class="card-arrow">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
         </div>
     </div>
   {% endfor %}
@@ -49,29 +57,29 @@ title: Learning about menstruation
 
 <script>
 function filterArticles() {
-    let input = document.getElementById('articleSearch').value.toLowerCase();
-    let cards = document.getElementsByClassName('article-result-card');
+    const input = document.getElementById('articleSearch').value.toLowerCase();
+    const cards = document.querySelectorAll('.article-result-card');
     
-    for (let card of cards) {
-        let title = card.getAttribute('data-title');
+    cards.forEach(card => {
+        const title = card.getAttribute('data-title');
         card.style.display = title.includes(input) ? "flex" : "none";
-    }
+    });
 }
 
 function filterByTag(tag) {
-    let cards = document.getElementsByClassName('article-result-card');
-    let buttons = document.getElementsByClassName('tag-btn');
+    const cards = document.querySelectorAll('.article-result-card');
+    const buttons = document.querySelectorAll('.tag-btn');
     
-    for (let btn of buttons) btn.classList.remove('active');
+    buttons.forEach(btn => btn.classList.remove('active'));
     event.currentTarget.classList.add('active');
 
-    for (let card of cards) {
-        let tags = card.getAttribute('data-tags');
+    cards.forEach(card => {
+        const tags = card.getAttribute('data-tags');
         if (tag === 'all' || tags.includes(tag.toLowerCase())) {
             card.style.display = "flex";
         } else {
             card.style.display = "none";
         }
-    }
+    });
 }
 </script>
