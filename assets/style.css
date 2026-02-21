@@ -414,9 +414,8 @@ body {
 .collapsible-panel.right { left: 50%; }
 
 .collapsible-panel.open {
-    max-height: 100px;
+    max-height: 400px; 
     opacity: 1;
-    overflow-y: auto;
 }
 
 .collapsible-inner {
@@ -426,6 +425,10 @@ body {
     padding: 1.5rem;
     position: relative;
     box-shadow: 0 12px 30px rgba(255, 140, 148, 0.15);
+    
+    /* New Additions */
+    max-height: 300px; 
+    overflow-y: auto;
 }
 
 .collapsible-inner .date {
