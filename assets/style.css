@@ -387,66 +387,112 @@ body {
     font-weight: bold;
 }
 
-/* Wrap each item + its panel in a row */
+/* --- Collapsible Panel Overlay --- */
 .timeline-row {
-    display: flex;
-    align-items: flex-start;
-    position: relative;
-    width: 100%;
-    margin-bottom: 2rem;
+    position: relative; /* anchor for the absolute panel */
 }
 
-/* Checkpoint stays on its side */
-.timeline-item.left  { width: 45%; margin-right: auto; }
-.timeline-item.right { width: 45%; margin-left: auto; }
-
-/* Collapsible panel hidden by default */
+/* Panel overlays on the opposite side — does NOT push content */
 .collapsible-panel {
-    width: 45%;
+    position: absolute;
+    top: 0;
+    width: 50%;
     max-height: 0;
     overflow: hidden;
     opacity: 0;
-    transition: max-height 0.4s ease, opacity 0.3s ease;
-    position: absolute;
-    top: 0;
+    transition: max-height 0.5s ease, opacity 0.3s ease;
+    z-index: 10;
+    padding: 0 20px;
+    box-sizing: border-box;
 }
 
+/* Left panel = opposite of right checkpoint, and vice versa */
 .collapsible-panel.left  { left: 0; }
-.collapsible-panel.right { right: 0; }
+.collapsible-panel.right { left: 50%; }
 
-/* When open */
 .collapsible-panel.open {
-    max-height: 800px; /* tall enough for your content */
+    max-height: 1000px;
     opacity: 1;
     overflow-y: auto;
 }
 
 .collapsible-inner {
-    background: #1e1e2e; /* match your theme */
-    border: 1px solid #444;
-    border-radius: 8px;
-    padding: 1.2rem;
+    background: var(--white);
+    border: 2px solid var(--accent);
+    border-radius: 20px;
+    padding: 1.5rem;
     position: relative;
+    box-shadow: 0 12px 30px rgba(255, 140, 148, 0.15);
+}
+
+.collapsible-inner .date {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: var(--accent);
+    margin-bottom: 0.4rem;
+}
+
+.collapsible-inner h3 {
+    color: var(--text);
+    font-size: 1.15rem;
+    margin: 0 2rem 1rem 0;
+}
+
+.collapsible-content {
+    font-size: 0.95rem;
+    line-height: 1.75;
+    color: var(--text);
+}
+
+.collapsible-content img {
+    max-width: 100%;
+    border-radius: 12px;
+    margin: 0.8rem 0;
 }
 
 .close-btn {
     position: absolute;
-    top: 0.5rem;
-    right: 0.7rem;
-    background: none;
+    top: 0.8rem;
+    right: 0.8rem;
+    background: var(--bg-color);
     border: none;
-    color: #aaa;
-    font-size: 1rem;
+    color: var(--text);
+    font-size: 0.9rem;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.2s;
+}
+
+.close-btn:hover {
+    background: var(--accent);
+    color: var(--white);
 }
 
 .full-page-link {
     display: inline-block;
     margin-top: 1rem;
     font-size: 0.85rem;
-    color: #88aaff;
+    color: var(--accent);
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.2s;
 }
 
-/* Cursor hint on checkpoint */
-.checkpoint { cursor: pointer; }
-.checkpoint[aria-expanded="true"] .read-more { color: #88aaff; }
+.full-page-link:hover { text-decoration: underline; }
+
+/* Active state on the checkpoint card */
+.checkpoint[aria-expanded="true"] .checkpoint-content {
+    border-color: var(--accent);
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(255, 140, 148, 0.15);
+}
+
+.checkpoint[aria-expanded="true"] .read-more {
+    color: var(--accent);
+}
