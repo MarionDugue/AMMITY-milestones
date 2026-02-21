@@ -122,6 +122,11 @@ body {
     margin-top: 10px; 
     color: #777; 
 }
+
+.snippet .excerpt-text {
+    display: none;
+}
+
 .checkpoint-content:hover .snippet { max-height: 150px; opacity: 1; }
 
 /* --- Educational Resources: SEARCH & TAGS (Cleaned) --- */
