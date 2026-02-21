@@ -8,4 +8,4 @@ title: "Master thesis"
 
 ### Results & Learnings:
 
-### Next steps:
+### Next steps: 
