@@ -50,7 +50,7 @@ body {
 
 /* --- Intro Section --- */
 .intro-box {
-    text-align: center;
+    text-align: center; /* Keeps H1 and Tags centered */
     max-width: 650px;
     margin: 0 auto 4rem auto;
     padding: 2rem;
@@ -63,6 +63,15 @@ body {
     color: var(--accent);
     font-size: 2.5rem;
     margin-bottom: 1rem;
+}
+
+/* New addition for text justification */
+.intro-box p {
+    text-align: justify;
+    text-justify: inter-word;
+    hyphens: auto;
+    line-height: 1.6; /* Recommended for readability in justified blocks */
+    margin-bottom: 1.5rem;
 }
 
 .intro-tags span {
