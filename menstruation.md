@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Learning about menstruation
+title: Resources
 ---
 
 # Educational Resources
