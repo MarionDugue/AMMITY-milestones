@@ -414,7 +414,7 @@ body {
 .collapsible-panel.right { left: 50%; }
 
 .collapsible-panel.open {
-    max-height: 1000px;
+    max-height: 500px;
     opacity: 1;
     overflow-y: auto;
 }
