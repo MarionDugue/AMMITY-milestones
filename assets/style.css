@@ -1,8 +1,8 @@
 :root {
-    --bg-color: #FEF9EF; /* Warm Cream background */
-    --accent: #FF8C94;    /* Friendly Soft Coral */
-    --text: #4A4E69;      /* Muted Slate for softer reading */
-    --line: #E9E1D4;      /* Warmer timeline line */
+    --bg-color: #FEF9EF; /* cream*/
+    --accent: #FF8C94;    /* coral */
+    --text: #4A4E69;      /* slate */
+    --line: #E9E1D4;      /* Greige */
     --sidebar-w: 240px;
     --white: #ffffff;
 }
@@ -64,6 +64,16 @@ body {
     font-size: 2.5rem;
     margin-bottom: 1rem;
 }
+
+.intro-box h2, .sub-heading {
+    color: var(--accent);
+    font-size: 1.4rem;   /* Larger than body (1rem) but smaller than h1 (2.5rem) */
+    font-weight: 700;
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+    line-height: 1.2;
+}
+
 
 /* New addition for text justification */
 .intro-box p {
