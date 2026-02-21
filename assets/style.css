@@ -15,7 +15,9 @@ body {
     background: var(--bg-color); 
     color: var(--text);
 }
-
+h2 {
+    color: var(--accent);
+}
 .sidebar {
     width: var(--sidebar-w);
     height: 100vh;
