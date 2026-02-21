@@ -5,5 +5,35 @@
     <ul class="nav-links">
         <li><a href="{{ '/' | relative_url }}">Timeline</a></li>
         <li><a href="{{ '/menstruation' | relative_url }}">Learning about menstruation</a></li>
+
+        <!-- Collapsible posts section -->
+        <li class="nav-collapsible">
+            <button class="nav-collapse-btn" onclick="toggleNav()" aria-expanded="false">
+                Posts
+                <span class="nav-arrow">▾</span>
+            </button>
+            <ul class="nav-sub" id="navPostList">
+                {% assign sorted_posts = site.posts | sort: 'date' %}
+                {% for post in sorted_posts %}
+                <li>
+                    <a href="{{ post.url | relative_url }}">
+                        <span class="nav-post-date">{{ post.date | date: "%b %Y" }}</span>
+                        {{ post.title }}
+                    </a>
+                </li>
+                {% endfor %}
+            </ul>
+        </li>
+
     </ul>
 </nav>
+
+<script>
+function toggleNav() {
+    const list = document.getElementById('navPostList');
+    const btn = document.querySelector('.nav-collapse-btn');
+    const isOpen = list.classList.contains('open');
+    list.classList.toggle('open');
+    btn.setAttribute('aria-expanded', !isOpen);
+}
+</script>
