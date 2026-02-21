@@ -386,3 +386,67 @@ body {
     margin-right: 4px;
     font-weight: bold;
 }
+
+/* Wrap each item + its panel in a row */
+.timeline-row {
+    display: flex;
+    align-items: flex-start;
+    position: relative;
+    width: 100%;
+    margin-bottom: 2rem;
+}
+
+/* Checkpoint stays on its side */
+.timeline-item.left  { width: 45%; margin-right: auto; }
+.timeline-item.right { width: 45%; margin-left: auto; }
+
+/* Collapsible panel hidden by default */
+.collapsible-panel {
+    width: 45%;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.4s ease, opacity 0.3s ease;
+    position: absolute;
+    top: 0;
+}
+
+.collapsible-panel.left  { left: 0; }
+.collapsible-panel.right { right: 0; }
+
+/* When open */
+.collapsible-panel.open {
+    max-height: 800px; /* tall enough for your content */
+    opacity: 1;
+    overflow-y: auto;
+}
+
+.collapsible-inner {
+    background: #1e1e2e; /* match your theme */
+    border: 1px solid #444;
+    border-radius: 8px;
+    padding: 1.2rem;
+    position: relative;
+}
+
+.close-btn {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.7rem;
+    background: none;
+    border: none;
+    color: #aaa;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.full-page-link {
+    display: inline-block;
+    margin-top: 1rem;
+    font-size: 0.85rem;
+    color: #88aaff;
+}
+
+/* Cursor hint on checkpoint */
+.checkpoint { cursor: pointer; }
+.checkpoint[aria-expanded="true"] .read-more { color: #88aaff; }
