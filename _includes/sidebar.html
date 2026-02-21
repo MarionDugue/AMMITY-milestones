@@ -13,8 +13,7 @@
                 <span class="nav-arrow">▾</span>
             </button>
             <ul class="nav-sub" id="navPostList">
-                {% assign sorted_posts = site.posts | sort: 'date' %}
-                {% for post in sorted_posts %}
+{                % for post in site.posts %}
                 <li>
                     <a href="{{ post.url | relative_url }}">
                         <span class="nav-post-date">{{ post.date | date: "%b %Y" }}</span>
