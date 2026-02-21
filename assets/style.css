@@ -123,9 +123,7 @@ body {
     color: #777; 
 }
 
-.snippet .excerpt-text {
-    display: none;
-}
+
 
 .checkpoint-content:hover .snippet { max-height: 150px; opacity: 1; }
 
