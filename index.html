@@ -34,9 +34,9 @@ title: Timeline
                         <span class="date">{{ post.date | date: "%b %d, %Y" }}</span>
                         <h3>{{ post.title }}</h3>
                         <div class="snippet">
-                            {{ post.excerpt | strip_html | truncate: 100 }}
+                            <div class="snippet">
                             <span class="read-more">Read more ▾</span>
-                        </div>
+                            </div>
                     </div>
                 </div>
             </div>
