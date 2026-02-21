@@ -496,3 +496,74 @@ body {
 .checkpoint[aria-expanded="true"] .read-more {
     color: var(--accent);
 }
+
+
+.nav-collapsible { list-style: none; }
+
+.nav-collapse-btn {
+    width: 100%;
+    background: none;
+    border: none;
+    font-family: inherit;
+    font-size: 1rem;
+    color: var(--text);
+    padding: 0.8rem;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.3s;
+}
+
+.nav-collapse-btn:hover {
+    color: var(--accent);
+    background: var(--bg-color);
+    padding-left: 1.2rem;
+}
+
+.nav-arrow {
+    font-size: 0.8rem;
+    transition: transform 0.3s ease;
+}
+
+.nav-collapse-btn[aria-expanded="true"] .nav-arrow {
+    transform: rotate(180deg);
+}
+
+.nav-sub {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, opacity 0.3s ease;
+    opacity: 0;
+}
+
+.nav-sub.open {
+    max-height: 600px;
+    opacity: 1;
+}
+
+.nav-sub li a {
+    padding: 0.5rem 0.8rem 0.5rem 1.5rem;
+    font-size: 0.85rem;
+    display: block;
+    border-left: 2px solid var(--line);
+    margin-left: 0.8rem;
+    line-height: 1.4;
+}
+
+.nav-sub li a:hover {
+    border-left-color: var(--accent);
+    padding-left: 1.8rem;
+}
+
+.nav-post-date {
+    display: block;
+    font-size: 0.7rem;
+    color: var(--accent);
+    font-weight: bold;
+    margin-bottom: 2px;
+}
