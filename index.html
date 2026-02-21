@@ -2,11 +2,8 @@
 layout: default
 title: Timeline
 ---
-
 <div class="intro-box">
-
-        <h1>What if the key to deep space crewed mission lies in a biological waste we currently discard?</h1>
-    </p>
+    <h1>What if the key to deep space crewed mission lies in a biological waste we currently discard?</h1>
     <p>
         The <strong>AMMITY</strong> project (<strong>A</strong>dvancements for <strong>M</strong>enstrual-blood <strong>M</strong>anagement in reduced grav<strong>ITY</strong>) was started in 2021 to integrate menstrual health into the space exploration roadmap.        
         Our current research is now focusing on developing a menstrual collection device that can collect the fluid in a reduced gravity context. It can then be repurposed to fit in the closed life support systems aboard spacecrafts.   
@@ -21,18 +18,55 @@ title: Timeline
 
 <div class="timeline-container">
     <div class="timeline-line"></div>
+    {% assign side = "left" %}
     {% for post in site.posts %}
-    <div class="timeline-item {% cycle 'left', 'right' %}">
-        <div class="checkpoint" onclick="location.href='{{ post.url | relative_url }}'">
-            <div class="checkpoint-content">
+    {% if side == "left" %}{% assign side = "right" %}{% else %}{% assign side = "left" %}{% endif %}
+    <div class="timeline-row" id="row-{{ forloop.index }}">
+        <!-- Checkpoint -->
+        <div class="timeline-item {{ side }}">
+            <div class="checkpoint" onclick="toggleCollapsible({{ forloop.index }}, '{{ side }}')" aria-expanded="false">
+                <div class="checkpoint-content">
+                    <span class="date">{{ post.date | date: "%b %d, %Y" }}</span>
+                    <h3>{{ post.title }}</h3>
+                    <div class="snippet">
+                        {{ post.excerpt | strip_html | truncate: 100 }}
+                        <span class="read-more">Read more ▾</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Collapsible panel on the OPPOSITE side -->
+        <div class="collapsible-panel {% if side == 'left' %}right{% else %}left{% endif %}" 
+             id="panel-{{ forloop.index }}">
+            <div class="collapsible-inner">
+                <button class="close-btn" onclick="toggleCollapsible({{ forloop.index }}, '{{ side }}')">✕</button>
                 <span class="date">{{ post.date | date: "%b %d, %Y" }}</span>
                 <h3>{{ post.title }}</h3>
-                <div class="snippet">
-                    {{ post.excerpt | strip_html | truncate: 100 }}
-                    <span class="read-more">Read sub-page →</span>
+                <div class="collapsible-content">
+                    {{ post.content }}
                 </div>
+                <a class="full-page-link" href="{{ post.url | relative_url }}">Open full page →</a>
             </div>
         </div>
     </div>
     {% endfor %}
 </div>
+
+<script>
+function toggleCollapsible(index, side) {
+    const panel = document.getElementById('panel-' + index);
+    const checkpoint = document.querySelector('#row-' + index + ' .checkpoint');
+    const isOpen = panel.classList.contains('open');
+
+    // Close all other panels first
+    document.querySelectorAll('.collapsible-panel.open').forEach(p => p.classList.remove('open'));
+    document.querySelectorAll('.checkpoint[aria-expanded="true"]').forEach(c => c.setAttribute('aria-expanded', 'false'));
+
+    if (!isOpen) {
+        panel.classList.add('open');
+        checkpoint.setAttribute('aria-expanded', 'true');
+        // Scroll into view smoothly
+        panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+}
+</script>
