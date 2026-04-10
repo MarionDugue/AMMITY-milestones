@@ -3,8 +3,8 @@ layout: post
 title: "Master semester project"
 ---
 
-Student: K.Keller
-Affiliation: GHE ETH Zürich
+**Student:** K.Keller <br>
+**Affiliation:** GHE ETH Zürich
 
 ### Objectives:
 The goal of this semester project was to develop at least one functioning prototype of a space cup. Three concepts in early development were improved and manufactured using silicone injection moulding: the flower, duckbill, and umbrella mechanisms originally developed by Simone Pfeiffer. In addition, a new concept - the balloon mechanism - was explored and initial development undertaken. The injection moulding process was investigated and optimized for these prototypes, including material selection, mould design, and manufacturing parameters. These efforts enabled the production of functional prototypes and provided insights into the feasibility, limitations, and future development potential of microgravity-compatible menstrual cup systems.
