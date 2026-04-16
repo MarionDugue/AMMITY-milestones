@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Parabolic flight tests #2"
+description: "Second parabolic flight testing a new iteration of a closing mechanism designed by Claripharm and CNES."
 ---
 
 

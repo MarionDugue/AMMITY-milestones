@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Master thesis"
+description: "Master thesis refining prototypes and developing new sealing mechanisms for reliable menstrual fluid containment in microgravity."
 ---
 
 **Student:** K.Keller <br>

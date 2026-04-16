@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Parabolic flight tests #1"
+description: "First parabolic flight tests evaluating a preliminary menstrual cup prototype adapted to microgravity."
 ---
 
 

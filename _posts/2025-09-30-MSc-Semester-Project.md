@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Master semester project"
+description: "Master semester project developing and investigating functioning space cup prototypes using silicone injection moulding."
 ---
 
 **Student:** K.Keller <br>

@@ -3,6 +3,9 @@ description: "Research project focusing on developing a menstrual collection dev
 url: "https://mariondugue.github.io"
 baseurl: "/AMMITY-milestones"
 
+author:
+  name: "Marion Dugue"
+
 plugins:
   - jekyll-seo-tag
   - jekyll-feed

@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Bachelor thesis"
+description: "Bachelor thesis project exploring 3D printing and closing mechanisms for menstrual cup prototypes at ETH Zürich."
 ---
 
 **Student:** S.Pfeiffer <br>
