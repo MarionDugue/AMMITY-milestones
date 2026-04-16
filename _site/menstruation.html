@@ -41,151 +41,20 @@
 
 
     <main class="main-content">
-        <section class="search-page-container">
+        <section class="search-page-container" style="text-align: center; max-width: 800px; margin: 0 auto; padding: 2rem;">
     <div class="search-header-section">
         <h1>Educational Resources</h1>
-        <div class="search-input-wrapper">
-            <label for="articleSearchInput" class="visually-hidden">Search articles</label>
-            <input type="text" id="articleSearchInput" placeholder="Search articles..." onkeyup="executeSearch()">
-        </div>
         
-        <div class="tag-navigation" id="tagNav">
-            <button class="filter-btn active" onclick="filterByTag('all')">All</button>
-            
-            
-                
-                    
-                        
-                        <button class="filter-btn" onclick="filterByTag('Biology')">Biology</button>
-                    
-                
-            
-                
-                    
-                
-                    
-                        
-                        <button class="filter-btn" onclick="filterByTag('Research')">Research</button>
-                    
-                
-            
-                
-                    
-                        
-                        <button class="filter-btn" onclick="filterByTag('Gender')">Gender</button>
-                    
-                
-                    
-                        
-                        <button class="filter-btn" onclick="filterByTag('Space')">Space</button>
-                    
-                
-            
+        <div class="under-construction" style="margin-top: 3rem; padding: 4rem 2rem; background: var(--white); border-radius: 20px; border: 2px dashed var(--line); box-shadow: 0 4px 15px rgba(74, 78, 105, 0.05);">
+            <div style="font-size: 3rem; margin-bottom: 1rem;">🚧</div>
+            <h2 style="color: var(--accent); margin-bottom: 1rem;">Under Construction</h2>
+            <p style="color: var(--text); font-size: 1.1rem; line-height: 1.6;">
+                We are currently gathering and curating detailed articles regarding menstruation health and space research. <br>
+                Please check back later!
+            </p>
         </div>
     </div>
-
-    <div class="results-list" id="articleResultsContainer">
-      
-        <a href="/AMMITY-milestones/menstruation/cycles-phases/" class="search-result-item" 
-             data-tags="biology" 
-             data-title="the four phases of the cycle">
-            
-            <div class="item-metadata">
-                <span class="item-date">Feb 13, 2026</span>
-                <div class="item-tags">
-                    
-                        <span class="pill-tag">Biology</span>
-                    
-                </div>
-            </div>
-
-            <div class="item-content">
-                <h2>The Four Phases of the Cycle</h2>
-                <p>Menstruation is the first phase of your cycle, but what follows is equally important for your health and energy levels. This ar...</p>
-            </div>
-
-            <div class="item-arrow">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
-            </div>
-        </a>
-      
-        <a href="/AMMITY-milestones/menstruation/hormone-health/" class="search-result-item" 
-             data-tags="biology,research" 
-             data-title="hormones and mental health">
-            
-            <div class="item-metadata">
-                <span class="item-date">Feb 13, 2026</span>
-                <div class="item-tags">
-                    
-                        <span class="pill-tag">Biology</span>
-                    
-                        <span class="pill-tag">Research</span>
-                    
-                </div>
-            </div>
-
-            <div class="item-content">
-                <h2>Hormones and Mental Health</h2>
-                <p>Understanding the dialogue between your endocrine system and your brain can provide clarity on mood shifts during your cycle.
-</p>
-            </div>
-
-            <div class="item-arrow">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
-            </div>
-        </a>
-      
-        <a href="/AMMITY-milestones/menstruation/women-in-space/" class="search-result-item" 
-             data-tags="gender,space" 
-             data-title="women in space">
-            
-            <div class="item-metadata">
-                <span class="item-date">Feb 21, 2026</span>
-                <div class="item-tags">
-                    
-                        <span class="pill-tag">Gender</span>
-                    
-                        <span class="pill-tag">Space</span>
-                    
-                </div>
-            </div>
-
-            <div class="item-content">
-                <h2>Women in space</h2>
-                <p>
-</p>
-            </div>
-
-            <div class="item-arrow">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
-            </div>
-        </a>
-      
-    </div>
-</div>
-
-<script>
-function executeSearch() {
-    const query = document.getElementById('articleSearchInput').value.toLowerCase();
-    const items = document.querySelectorAll('.search-result-item');
-    items.forEach(item => {
-        const title = item.getAttribute('data-title');
-        item.style.display = title.includes(query) ? "flex" : "none";
-    });
-}
-
-function filterByTag(tag) {
-    const items = document.querySelectorAll('.search-result-item');
-    const btns = document.querySelectorAll('.filter-btn');
-    btns.forEach(btn => btn.classList.remove('active'));
-    event.currentTarget.classList.add('active');
-
-    items.forEach(item => {
-        const itemTags = item.getAttribute('data-tags');
-        item.style.display = (tag === 'all' || itemTags.includes(tag.toLowerCase())) ? "flex" : "none";
-    });
-}
-</script>
+</section>
 
     </main>
 </body>
