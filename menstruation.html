@@ -3,10 +3,11 @@ layout: default
 title: Learning about menstruation
 ---
 
-<div class="search-page-container">
+<section class="search-page-container">
     <div class="search-header-section">
         <h1>Educational Resources</h1>
         <div class="search-input-wrapper">
+            <label for="articleSearchInput" class="visually-hidden">Search articles</label>
             <input type="text" id="articleSearchInput" placeholder="Search articles..." onkeyup="executeSearch()">
         </div>
         
@@ -26,10 +27,9 @@ title: Learning about menstruation
 
     <div class="results-list" id="articleResultsContainer">
       {% for article in site.articles %}
-        <div class="search-result-item" 
+        <a href="{{ article.url | relative_url }}" class="search-result-item" 
              data-tags="{{ article.tags | join: ',' | downcase }}" 
-             data-title="{{ article.title | downcase }}"
-             onclick="location.href='{{ article.url | relative_url }}'">
+             data-title="{{ article.title | downcase }}">
             
             <div class="item-metadata">
                 <span class="item-date">{{ article.date | date: "%b %d, %Y" }}</span>
@@ -48,7 +48,7 @@ title: Learning about menstruation
             <div class="item-arrow">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
             </div>
-        </div>
+        </a>
       {% endfor %}
     </div>
 </div>

@@ -2,7 +2,7 @@
 layout: default
 title: Timeline
 ---
-<div class="intro-box">
+<section class="intro-box">
     <h1>What if the key to deep space crewed mission lies in a biological waste we currently discard?</h1>
     <p>
         The <strong>AMMITY</strong> project (<strong>A</strong>dvancements for <strong>M</strong>enstrual-blood <strong>M</strong>anagement in reduced grav<strong>ITY</strong>) was started in 2021 to integrate menstrual health into the space exploration roadmap.        
@@ -14,9 +14,9 @@ title: Timeline
     <div class="intro-tags">
         <span>#Research</span> <span>#Education</span> <span>#Innovation</span>
     </div>
-</div>
+</section>
 
-<div class="timeline-container">
+<section class="timeline-container">
     <div class="timeline-line"></div>
     {% assign side = "right" %}
     {% for post in site.posts %}
@@ -29,23 +29,22 @@ title: Timeline
 
             <!-- Checkpoint -->
             <div class="timeline-item {{ side }}">
-                <div class="checkpoint" onclick="toggleCollapsible({{ forloop.index }}, '{{ side }}')" aria-expanded="false">
+                <button class="checkpoint" aria-expanded="false" onclick="toggleCollapsible({{ forloop.index }}, '{{ side }}')">
                     <div class="checkpoint-content">
                         <span class="date">{{ post.date | date: "%b %d, %Y" }}</span>
                         <h3>{{ post.title }}</h3>
                         <div class="snippet">
-
-                        <span class="read-more">Read more ▾</span>
+                            <span class="read-more">Read more ▾</span>
+                        </div>
                     </div>
-                    </div>
-                </div>
+                </button>
             </div>
 
             <!-- Collapsible panel on the OPPOSITE side -->
             <div class="collapsible-panel {% if side == 'left' %}right{% else %}left{% endif %}"
                  id="panel-{{ forloop.index }}">
                 <div class="collapsible-inner">
-                    <button class="close-btn" onclick="toggleCollapsible({{ forloop.index }}, '{{ side }}')">✕</button>
+                    <button class="close-btn" aria-label="Close panel" onclick="toggleCollapsible({{ forloop.index }}, '{{ side }}')">✕</button>
                     <span class="date">{{ post.date | date: "%b %d, %Y" }}</span>
                     <h3>{{ post.title }}</h3>
                     <div class="collapsible-content">
@@ -57,7 +56,7 @@ title: Timeline
 
         </div>
     {% endfor %}
-</div>
+</section>
 
 <script>
 function toggleCollapsible(index, side) {

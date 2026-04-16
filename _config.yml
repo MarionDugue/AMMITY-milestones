@@ -1,6 +1,11 @@
-title: Project Workspace
+title: "AMMITY - Advancements for Menstrual-blood Management in reduced gravITY"
+description: "Research project focusing on developing a menstrual collection device for reduced gravity contexts to integrate menstrual health into space exploration."
 url: "https://mariondugue.github.io"
 baseurl: "/AMMITY-milestones"
+
+plugins:
+  - jekyll-seo-tag
+  - jekyll-feed
 
 collections:
   articles:
