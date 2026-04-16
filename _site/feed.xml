@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://mariondugue.github.io/AMMITY-milestones/feed.xml" rel="self" type="application/atom+xml" /><link href="https://mariondugue.github.io/AMMITY-milestones/" rel="alternate" type="text/html" /><updated>2026-04-16T14:06:22-07:00</updated><id>https://mariondugue.github.io/AMMITY-milestones/feed.xml</id><title type="html">AMMITY - Advancements for Menstrual-blood Management in reduced gravITY</title><subtitle>Research project focusing on developing a menstrual collection device for reduced gravity contexts to integrate menstrual health into space exploration.</subtitle><entry><title type="html">Master thesis</title><link href="https://mariondugue.github.io/AMMITY-milestones/2026/03/02/MSc-thesis.html" rel="alternate" type="text/html" title="Master thesis" /><published>2026-03-02T00:00:00-08:00</published><updated>2026-03-02T00:00:00-08:00</updated><id>https://mariondugue.github.io/AMMITY-milestones/2026/03/02/MSc-thesis</id><content type="html" xml:base="https://mariondugue.github.io/AMMITY-milestones/2026/03/02/MSc-thesis.html"><![CDATA[<p><strong>Student:</strong> K.Keller <br />
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://mariondugue.github.io/AMMITY-milestones/feed.xml" rel="self" type="application/atom+xml" /><link href="https://mariondugue.github.io/AMMITY-milestones/" rel="alternate" type="text/html" /><updated>2026-04-16T14:13:37-07:00</updated><id>https://mariondugue.github.io/AMMITY-milestones/feed.xml</id><title type="html">AMMITY - Advancements for Menstrual-blood Management in reduced gravITY</title><subtitle>Research project focusing on developing a menstrual collection device for reduced gravity contexts to integrate menstrual health into space exploration.</subtitle><entry><title type="html">Master thesis</title><link href="https://mariondugue.github.io/AMMITY-milestones/2026/03/02/MSc-thesis.html" rel="alternate" type="text/html" title="Master thesis" /><published>2026-03-02T00:00:00-08:00</published><updated>2026-03-02T00:00:00-08:00</updated><id>https://mariondugue.github.io/AMMITY-milestones/2026/03/02/MSc-thesis</id><content type="html" xml:base="https://mariondugue.github.io/AMMITY-milestones/2026/03/02/MSc-thesis.html"><![CDATA[<p><strong>Student:</strong> K.Keller <br />
 <strong>Affiliation:</strong> GHE ETH Zürich</p>
 
 <h3 id="objectives">Objectives:</h3>
@@ -39,15 +39,33 @@ Overall, the project demonstrates that developing a menstrual cup suitable for m
 <h3 id="achievements">Achievements:</h3>
 
 <h3 id="lessons-learnt">Lessons learnt:</h3>]]></content><author><name></name></author><summary type="html"><![CDATA[Objectives:]]></summary></entry><entry><title type="html">Parabolic flight tests #1</title><link href="https://mariondugue.github.io/AMMITY-milestones/2023/04/30/Parabolic-flight_1.html" rel="alternate" type="text/html" title="Parabolic flight tests #1" /><published>2023-04-30T00:00:00-07:00</published><updated>2023-04-30T00:00:00-07:00</updated><id>https://mariondugue.github.io/AMMITY-milestones/2023/04/30/Parabolic-flight_1</id><content type="html" xml:base="https://mariondugue.github.io/AMMITY-milestones/2023/04/30/Parabolic-flight_1.html"><![CDATA[<h3 id="objectives">Objectives:</h3>
-<ul>
-  <li></li>
-</ul>
+<p>The first parabolic flight testing the first (rather rudimentary) menstrual cup prototype adapted to microgravity. We had 4 parabolas of around 6s of reduced gravity to test the collection mechanism of menstrual blood.</p>
 
-<h3 id="procedure">Procedure:</h3>
+<h3 id="menstrual-cup-design">Menstrual cup design:</h3>
+<p>V1: suction system appended to the menstrual cup stem. Collection action by sucking the menstrual blood using an attached syringue.</p>
 
 <h3 id="achievements">Achievements:</h3>
+<ul>
+  <li>First time testing a menstrual cup in a reduced gravity context!</li>
+  <li>V1 testing</li>
+</ul>
 
-<h3 id="lessons-learnt">Lessons learnt:</h3>]]></content><author><name></name></author><summary type="html"><![CDATA[Objectives:]]></summary></entry><entry><title type="html">MELISSA conference 2022</title><link href="https://mariondugue.github.io/AMMITY-milestones/2022/11/08/melissa22.html" rel="alternate" type="text/html" title="MELISSA conference 2022" /><published>2022-11-08T00:00:00-08:00</published><updated>2022-11-08T00:00:00-08:00</updated><id>https://mariondugue.github.io/AMMITY-milestones/2022/11/08/melissa22</id><content type="html" xml:base="https://mariondugue.github.io/AMMITY-milestones/2022/11/08/melissa22.html"><![CDATA[<div style="background: var(--bg-color); padding: 1.5rem; border-radius: 15px; margin-bottom: 2rem; border-left: 5px solid var(--accent);">
+<h3 id="lessons-learnt">Lessons learnt:</h3>
+<ul>
+  <li>3 vomit bags that were initially thought as unnecessary were soon very much needed.</li>
+</ul>
+
+<div style="display: flex; gap: 2rem; margin: 3rem 0 1rem 0; align-items: flex-start; justify-content: center; flex-wrap: wrap;">
+    <figure style="margin: 0; text-align: center; flex: 1; min-width: 300px;">
+        <img src="/AMMITY-milestones/assets/images/flight1.png" alt="parabolic flight - v1" style="border-radius: 15px; box-shadow: 0 8px 25px rgba(74, 78, 105, 0.15); width: 100%; max-width: 100%;" />
+        <figcaption style="margin-top: 12px; font-size: 0.9rem; color: #777;">Our university's re-post of the flight.</figcaption>
+    </figure>
+
+    <figure style="margin: 0; text-align: center; flex: 1; min-width: 300px;">
+        <img src="/AMMITY-milestones/assets/images/prototype1.png" alt="prototype - v1" style="border-radius: 15px; box-shadow: 0 8px 25px rgba(74, 78, 105, 0.15); width: 100%; max-width: 100%;" />
+        <figcaption style="margin-top: 12px; font-size: 0.9rem; color: #777;">Prototype v1 in development.</figcaption>
+    </figure>
+</div>]]></content><author><name></name></author><summary type="html"><![CDATA[Objectives: The first parabolic flight testing the first (rather rudimentary) menstrual cup prototype adapted to microgravity. We had 4 parabolas of around 6s of reduced gravity to test the collection mechanism of menstrual blood.]]></summary></entry><entry><title type="html">MELISSA conference 2022</title><link href="https://mariondugue.github.io/AMMITY-milestones/2022/11/08/melissa22.html" rel="alternate" type="text/html" title="MELISSA conference 2022" /><published>2022-11-08T00:00:00-08:00</published><updated>2022-11-08T00:00:00-08:00</updated><id>https://mariondugue.github.io/AMMITY-milestones/2022/11/08/melissa22</id><content type="html" xml:base="https://mariondugue.github.io/AMMITY-milestones/2022/11/08/melissa22.html"><![CDATA[<div style="background: var(--bg-color); padding: 1.5rem; border-radius: 15px; margin-bottom: 2rem; border-left: 5px solid var(--accent);">
     <p style="margin: 0; color: var(--text);"><strong>📍 Conference:</strong> MELISSA</p>
     <p style="margin: 5px 0 0 0; color: var(--text);"><strong>🗓 Date/Location:</strong> 08-10 November 2022, Toulouse</p>
 </div>
