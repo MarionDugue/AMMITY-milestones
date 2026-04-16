@@ -30,50 +30,16 @@ description: "Timeline and overview of the AMMITY project developing menstrual c
 
             <!-- Checkpoint -->
             <div class="timeline-item {{ side }}">
-                <button class="checkpoint" aria-expanded="false" onclick="toggleCollapsible({{ forloop.index }}, '{{ side }}')">
+                <a class="checkpoint" href="{{ post.url | relative_url }}" style="text-decoration: none; display: block;">
                     <div class="checkpoint-content">
                         <span class="date">{{ post.date | date: "%b %d, %Y" }}</span>
                         <h3>{{ post.title }}</h3>
-                        <div class="snippet">
-                            <p style="margin: 0 0 10px 0;">{{ post.excerpt | strip_html | truncatewords: 20 }}</p>
-                            <span class="read-more">Read more ▾</span>
-                        </div>
+                        <p style="margin: 10px 0 0 0; font-size: 0.9rem; color: #777;">{{ post.description | default: post.excerpt | strip_html | truncatewords: 20 }}</p>
+                        <span class="read-more" style="display: inline-block; margin-top: 10px; color: var(--accent); font-weight: bold;">Read more →</span>
                     </div>
-                </button>
-            </div>
-
-            <!-- Collapsible panel on the OPPOSITE side -->
-            <div class="collapsible-panel {% if side == 'left' %}right{% else %}left{% endif %}"
-                 id="panel-{{ forloop.index }}">
-                <div class="collapsible-inner">
-                    <button class="close-btn" aria-label="Close panel" onclick="toggleCollapsible({{ forloop.index }}, '{{ side }}')">✕</button>
-                    <span class="date">{{ post.date | date: "%b %d, %Y" }}</span>
-                    <h3>{{ post.title }}</h3>
-                    <a class="full-page-link" href="{{ post.url | relative_url }}">Open full page →</a>
-                    <div class="collapsible-content">
-                        {{ post.content }}
-                    </div>
-                </div>
+                </a>
             </div>
 
         </div>
     {% endfor %}
 </section>
-
-<script>
-function toggleCollapsible(index, side) {
-    const panel = document.getElementById('panel-' + index);
-    const checkpoint = document.querySelector('#row-' + index + ' .checkpoint');
-    const isOpen = panel.classList.contains('open');
-
-    // Close all other panels first
-    document.querySelectorAll('.collapsible-panel.open').forEach(p => p.classList.remove('open'));
-    document.querySelectorAll('.checkpoint[aria-expanded="true"]').forEach(c => c.setAttribute('aria-expanded', 'false'));
-
-    if (!isOpen) {
-        panel.classList.add('open');
-        checkpoint.setAttribute('aria-expanded', 'true');
-        panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-    }
-}
-</script>
