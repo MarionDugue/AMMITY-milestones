@@ -48,10 +48,10 @@ title: Timeline
                     <button class="close-btn" aria-label="Close panel" onclick="toggleCollapsible({{ forloop.index }}, '{{ side }}')">✕</button>
                     <span class="date">{{ post.date | date: "%b %d, %Y" }}</span>
                     <h3>{{ post.title }}</h3>
+                    <a class="full-page-link" href="{{ post.url | relative_url }}">Open full page →</a>
                     <div class="collapsible-content">
                         {{ post.content }}
                     </div>
-                    <a class="full-page-link" href="{{ post.url | relative_url }}">Open full page →</a>
                 </div>
             </div>
 

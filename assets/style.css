@@ -517,7 +517,7 @@ body {
 
 .full-page-link {
     display: inline-block;
-    margin-top: 1rem;
+    margin-bottom: 1rem;
     font-size: 0.85rem;
     color: var(--accent);
     font-weight: bold;
