@@ -25,7 +25,7 @@ V1: suction system appended to the menstrual cup stem. Collection action by suck
     </figure>
 
     <figure style="margin: 0; text-align: center; flex: 1; min-width: 300px;">
-        <img src="{{ '/assets/images/prototype1.JPG' | relative_url }}" alt="prototype - v1" style="border-radius: 15px; box-shadow: 0 8px 25px rgba(74, 78, 105, 0.15); width: 100%; max-width: 100%;">
+        <img src="{{ '/assets/images/prototype1.JPG' | relative_url }}" alt="Close-up of the V1 menstrual cup prototype featuring a syringe suction system" style="border-radius: 15px; box-shadow: 0 8px 25px rgba(74, 78, 105, 0.15); width: 100%; max-width: 100%;">
         <figcaption style="margin-top: 12px; font-size: 0.9rem; color: #777;">Prototype v1 in development.</figcaption>
     </figure>
 </div>
