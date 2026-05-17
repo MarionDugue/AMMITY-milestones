@@ -72,7 +72,7 @@ body {
 /* --- Intro Section --- */
 .intro-box {
     text-align: center; /* Keeps H1 and Tags centered */
-    max-width: 650px;
+    max-width: 100%;
     margin: 0 auto 4rem auto;
     padding: 2rem;
     background: var(--white);
@@ -107,7 +107,7 @@ body {
 }
 
 /* --- Timeline Aesthetic --- */
-.timeline-container { position: relative; max-width: 800px; margin: auto; }
+.timeline-container { position: relative; max-width: 100%; margin: auto; }
 .timeline-line {
     position: absolute; left: 50%; width: 3px; height: 100%;
     background: var(--line); transform: translateX(-50%);
