@@ -809,3 +809,17 @@ body {
     height: 22px;
     fill: currentColor;
 }
+
+/* --- Timeline Upwards Arrow --- */
+.timeline-line::before {
+    content: '';
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 14px solid var(--line);
+}
