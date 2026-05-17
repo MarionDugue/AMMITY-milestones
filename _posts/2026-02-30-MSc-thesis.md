@@ -5,7 +5,7 @@ description: "Master thesis refining prototypes and developing new sealing mecha
 ---
 
 **Student:** K.Keller <br>
-**Affiliation:** GHE ETH Zürich
+**Affiliation:** Global Health Engineering @ ETH Zürich
 
 ### Objectives:
 In this thesis, the previously developed prototypes will be further refined and advanced toward a finalized design. In addition to improving the existing concepts, several new sealing mechanisms will be designed and manufactured to explore alternative approaches for reliable fluid containment in microgravity. Parabolic flight tests will play a key role in this phase of the project, providing valuable insights into fluid behaviour under microgravity conditions and helping to evaluate the performance of the most mature design, the flower mechanism.
