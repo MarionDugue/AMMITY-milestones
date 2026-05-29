@@ -30,6 +30,26 @@ description: "Timeline and overview of the AMMITY project developing menstrual c
 
             <!-- Checkpoint -->
             <div class="timeline-item {{ side }}">
+                {% if post.is_external %}
+                <div class="checkpoint" style="display: block;">
+                    <div class="checkpoint-content">
+                        <span class="date">{{ post.date | date: "%b %d, %Y" }}</span>
+                        {% if post.logo %}
+                        <img src="{{ post.logo | relative_url }}" alt="Logo" style="max-height: 80px; display: block; margin-bottom: 15px; border-radius: 8px;">
+                        {% endif %}
+                        <h3>{{ post.title }}</h3>
+                        <p style="margin: 10px 0 0 0; font-size: 0.9rem; color: #777;">{{ post.description | default: post.excerpt | strip_html }}</p>
+                        <div style="margin-top: 15px; display: flex; gap: 15px; flex-wrap: wrap;">
+                            {% if post.echobox_url %}
+                            <a href="{{ post.echobox_url }}" target="_blank" style="color: var(--accent); font-weight: bold; text-decoration: underline;">Listen on Echobox</a>
+                            {% endif %}
+                            {% if post.apple_url %}
+                            <a href="{{ post.apple_url }}" target="_blank" style="color: var(--accent); font-weight: bold; text-decoration: underline;">Listen on Apple Podcasts</a>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+                {% else %}
                 <a class="checkpoint" href="{{ post.url | relative_url }}" style="text-decoration: none; display: block;">
                     <div class="checkpoint-content">
                         <span class="date">{{ post.date | date: "%b %d, %Y" }}</span>
@@ -38,6 +58,7 @@ description: "Timeline and overview of the AMMITY project developing menstrual c
                         <span class="read-more" style="display: inline-block; margin-top: 10px; color: var(--accent); font-weight: bold;">Read more →</span>
                     </div>
                 </a>
+                {% endif %}
             </div>
 
         </div>
