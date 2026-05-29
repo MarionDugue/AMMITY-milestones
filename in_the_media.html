@@ -1,0 +1,47 @@
+---
+layout: default
+title: In the Media
+description: "Media appearances and interviews about the AMMITY project."
+---
+<div class="media-container" style="max-width: 900px; margin: 0 auto; padding: 2rem 0;">
+    <div class="about-header" style="text-align: center; margin-bottom: 4rem;">
+        <h1 style="font-size: 2.5rem; color: var(--accent); margin-bottom: 1rem;">In the Media</h1>
+        <p style="font-size: 1.1rem; color: var(--text); max-width: 600px; margin: 0 auto; line-height: 1.6;">Explore our latest media appearances, interviews, and features discussing the AMMITY project.</p>
+    </div>
+
+    <!-- Carousel Container -->
+    <div class="carousel" style="display: flex; overflow-x: auto; scroll-snap-type: x mandatory; gap: 2rem; padding: 1rem 0 2rem 0; -webkit-overflow-scrolling: touch; scroll-behavior: smooth;">
+        
+        <!-- Media Item: Echobox Radio -->
+        <div class="carousel-item" style="flex: 0 0 320px; scroll-snap-align: center; background: var(--white); border-radius: 20px; box-shadow: 0 4px 15px rgba(74, 78, 105, 0.05); padding: 2rem; display: flex; flex-direction: column; transition: transform 0.3s ease;">
+            <div style="height: 120px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;">
+                <img src="{{ '/assets/images/echobox_logo.jpeg' | relative_url }}" alt="Echobox Logo" style="max-height: 100%; max-width: 100%; border-radius: 12px; object-fit: contain;">
+            </div>
+            <span style="font-size: 0.85rem; font-weight: bold; color: var(--accent); margin-bottom: 0.5rem; display: block;">Feb 15, 2024</span>
+            <h3 style="margin: 0 0 1rem 0; font-size: 1.25rem; color: var(--text);">Talk That Science</h3>
+            <p style="font-size: 0.95rem; color: #777; margin-bottom: 2rem; flex-grow: 1; line-height: 1.5;">An interview discussing the AMMITY project and menstruation in space.</p>
+            <div style="display: flex; flex-direction: column; gap: 0.8rem;">
+                <a href="https://membership.echobox.radio/shows/talk-that-science?episode=21" target="_blank" style="display: inline-block; color: var(--accent); font-weight: bold; text-decoration: none; font-size: 0.95rem; border: 1px solid var(--accent); padding: 0.6rem 1rem; border-radius: 8px; text-align: center; transition: all 0.2s ease;" onmouseover="this.style.background='var(--accent)'; this.style.color='white';" onmouseout="this.style.background='transparent'; this.style.color='var(--accent)';">Listen on Echobox</a>
+                <a href="https://podcasts.apple.com/de/podcast/menstruation-in-space-echobox-radio/id1529252885?i=1000648976280" target="_blank" style="display: inline-block; color: var(--text); font-weight: bold; text-decoration: none; font-size: 0.95rem; border: 1px solid var(--line); padding: 0.6rem 1rem; border-radius: 8px; text-align: center; transition: all 0.2s ease;" onmouseover="this.style.borderColor='var(--accent)'; this.style.color='var(--accent)';" onmouseout="this.style.borderColor='var(--line)'; this.style.color='var(--text)';">Listen on Apple Podcasts</a>
+            </div>
+        </div>
+        
+        <!-- Add more carousel items here following the same structure -->
+        
+    </div>
+</div>
+
+<style>
+/* Hide scrollbar for carousel but keep functionality */
+.carousel::-webkit-scrollbar {
+    display: none;
+}
+.carousel {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+.carousel-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(255, 140, 148, 0.15) !important;
+}
+</style>
